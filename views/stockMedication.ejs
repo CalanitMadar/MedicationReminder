@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="javascripts/functions.js"></script>
+    <script src="javascripts/listDrug.js"></script>
+    <script src="javascripts/alertInTime.js"></script>
+
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/one-page-wonder.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/logout"><button  id="logout" type="button" class="btn btn-primary">Log out</button></a>
+        <a class="navbar-brand" href="/returnHomePage"><button  id="returnHomePage" type="button" class="btn btn-primary">Go to homepage</button></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="masthead text-center text-white">
+
+    <div class="masthead-content">
+        <form action="/saveStockMedication" method="post" class="text-black-50" >
+            <h3>Please choose one of the medications you are taking:</h3>
+            <select class="float-none" id="listDrugs" name="listDrugs" size="0" required="required">
+            </select><br><br>
+
+            <h3>Enter the amount you have from the medicine:</h3>
+            <input type="number" id="numberOfStockMedication" name="numberOfStockMedication" min="0" required="required"><br><br>
+
+            <h3>Remind me when I have:</h3>
+            <input type="number" id="remind" name="remind" min="0" required="required"><br><br>
+
+            <h3>Alert time:</h3>
+                <select id="alertTime"  name="alertTime" style="padding:10px; width: 100px; background: #f1f1f1; border:1px solid #dcdcdc;" class="select_menu">
+                    <option value="00">00:00</option>
+                    <option value="01">01:00</option>
+                    <option value="02">02:00</option>
+                    <option value="03">03:00</option>
+                    <option value="04">04:00</option>
+                    <option value="05">05:00</option>
+                    <option value="06">06:00</option>
+                    <option value="07">07:00</option>
+                    <option value="08">08:00</option>
+                    <option value="09">09:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+                </select>
+
+
+            <h3>Select an alert option:</h3>
+
+            <select name="type_alert"  id="type_alert">
+                <option value="SMS">SMS</option>
+                <option value="email">email</option>
+                <option value="aCallPhone">a call phone</option>
+            </select>
+            <br><br>
+            <button type="submit" id="stock" class="btn btn-primary" >OK</button>
+        </form>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+
+<!-- Footer -->
+<footer class="py-5 bg-black">
+    <div class="container">
+        <p class="m-0 text-center text-white small">calanit &copy; madar</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

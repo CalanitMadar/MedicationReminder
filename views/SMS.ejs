@@ -1,0 +1,32 @@
+<section>
+    <h2>Telesign SMS Verify</h2>
+    <form onsubmit="TelesignSMSVerify()">
+        <label>Phone Number</label>
+        <input name="to" value="0584472267">
+        <label>Code</label>
+        <input name="code" value="123456">
+        <span></span>
+        <button>Make API Request</button>
+    </form>
+</section>
+<script>
+    async function TelesignSMSVerify() {
+        event.preventDefault();
+        const form = event.target;
+
+        const to = form.querySelector('[name=to]').value;
+        const code = form.querySelector('[name=code]').value;
+        const result = await fetch("https://telesign-telesign-send-sms-verification-code-v1.p.rapidapi.com/sms-verification-code?phoneNumber=" + to + "&verifyCode=" + code, {
+            "method": "POST",
+            "headers": {
+                "x-rapidapi-host": "telesign-telesign-send-sms-verification-code-v1.p.rapidapi.com",
+                "x-rapidapi-key": YOUR_RAPID_API_KEY_GOES_HERE,
+            },
+        });
+
+        const body = await result.json();
+        console.log(body);
+
+        alert(body.message);
+    }
+</script>
