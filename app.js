@@ -66,7 +66,9 @@ app.use('/', checkDatabaseRouter);
 
 
 
-
+app.listen(3000, function () {
+  console.log('Server is running on port 3000'); // הוסיפי תיאור מתאים לפורט שאת משתמשת בו
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
